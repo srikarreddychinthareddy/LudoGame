@@ -1,0 +1,34 @@
+services:
+  spring:
+    build: .
+    container_name: spring
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://pdb:5431/ludo  # Use the service name "pdb"
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+    ports:
+      - 8000:8080
+    restart: always
+    depends_on:
+      - pdb
+    networks:
+      - app_network
+
+  pdb:
+    image: postgres
+    container_name: pdb
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=ludo
+    ports:
+      - 5431:5431  # Match internal and external ports
+    restart: always
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
