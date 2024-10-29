@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlayerRepository extends CrudRepository<Player, String> {
-    Player  loadPlayerByUsername(String userName);
+    Player  findByUsername(String username);
 }

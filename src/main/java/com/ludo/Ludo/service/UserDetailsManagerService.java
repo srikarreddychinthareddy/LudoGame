@@ -1,13 +1,14 @@
 package com.ludo.Ludo.service;
 
-import com.ludo.Ludo.adaptor.payloadToModel.PlayerAdapter;
-import com.ludo.Ludo.dao.PlayerDao;
+import com.ludo.Ludo.constants.RoleType;
 import com.ludo.Ludo.models.Player;
+import com.ludo.Ludo.payload.CreateGuestResponse;
 import com.ludo.Ludo.payload.SignUpRequest;
+import com.ludo.Ludo.payload.SignUpResponse;
+import com.ludo.Ludo.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -17,28 +18,41 @@ import java.util.UUID;
 public class UserDetailsManagerService {
 
     @Autowired
-    PlayerDao playerDao;
+    PlayerRepository playerRepository;
     @Autowired
     RedisTemplate<String, Player> redisTemplate;
 
-    public Player createGuestUser() {
+    public CreateGuestResponse createGuestUser() {
         String guestId;
         do{
             guestId = UUID.randomUUID().toString();
         }while(redisTemplate.hasKey(guestId));
 
         String username = "Guest_"+guestId;
-        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority("role");
-        Player player = new Player(username, null, simpleGrantedAuthority);
-        player.setId(guestId);
+        Player player = Player.builder()
+                .id(guestId)
+                .role(RoleType.Guest.toString())
+                .username(username)
+                .password("")
+                .build();
         this.saveToSecurityContext(player);
-        return player;
+        return CreateGuestResponse.builder()
+                .guestName(username)
+                .guestId(guestId)
+                .build();
     }
 
-    public void createUser(SignUpRequest signUpRequest){
-        Player player = PlayerAdapter.adapter(signUpRequest);
-        playerDao.save(player);
+    public SignUpResponse createUser(SignUpRequest signUpRequest){
+        Player player = Player.builder()
+                .username(signUpRequest.getUsername())
+                .password(signUpRequest.getPassword())
+                .build();
+        playerRepository.save(player);
         this.saveToSecurityContext(player);
+        return SignUpResponse.builder()
+                .isSuccess(true)
+                .errorMessage("")
+                .build();
     }
 
     public void saveToSecurityContext(Player player){

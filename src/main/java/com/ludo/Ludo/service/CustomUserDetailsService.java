@@ -1,7 +1,6 @@
 package com.ludo.Ludo.service;
 
-import com.ludo.Ludo.dao.PlayerDao;
-import com.ludo.Ludo.models.Player;
+import com.ludo.Ludo.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,10 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
-    PlayerDao playerDao;
+    PlayerRepository playerRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return playerDao.loadPlayerByUsername(username);
+        return playerRepository.findByUsername(username);
     }
 }
