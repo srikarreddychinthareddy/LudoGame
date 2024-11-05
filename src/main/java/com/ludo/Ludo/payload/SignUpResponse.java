@@ -4,6 +4,6 @@ import lombok.Builder;
 
 @Builder
 public class SignUpResponse {
-    Boolean isSuccess;
-    String errorMessage;
+    public Boolean isSuccess;
+    public String errorMessage;
 }
