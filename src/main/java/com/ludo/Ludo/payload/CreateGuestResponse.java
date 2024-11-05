@@ -4,7 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Builder
-//@Getter
+@Getter
 public class CreateGuestResponse {
    public String guestId;
    public String guestName;
