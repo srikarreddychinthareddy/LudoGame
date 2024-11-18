@@ -1,0 +1,110 @@
+{
+  "gameId": 231,
+  "gameStatus": "ACTIVE",
+  "boardId": 2,
+  "playerDetails": [
+    {
+      "playerId": 1,
+      "playerName": "GODZILLA",
+      "pawnDetails": [
+        {
+          "pawnId": 1,
+          "pawnColor": "GREEN"
+        },
+        {
+          "pawnId": 2,
+          "pawnColor": "GREEN"
+        },
+        {
+          "pawnId": 3,
+          "pawnColor": "GREEN"
+        },
+        {
+          "pawnId": 4,
+          "pawnColor": "GREEN"
+        }
+      ]
+    },
+    {
+      "playerId": 2,
+      "playerName": "KONG",
+      "pawnDetails": [
+        {
+          "pawnId": 1,
+          "pawnColor": "RED"
+        },
+        {
+          "pawnId": 2,
+          "pawnColor": "RED"
+        },
+        {
+          "pawnId": 3,
+          "pawnColor": "RED"
+        },
+        {
+          "pawnId": 4,
+          "pawnColor": "RED",
+          "isAtHome": "TRUE"
+        }
+      ]
+    },
+    {
+      "playerId": 3,
+      "playerName": "FLY",
+      "pawnDetails": [
+        {
+          "pawnId": 1,
+          "pawnColor": "YELLOW"
+        },
+        {
+          "pawnId": 2,
+          "pawnColor": "YELLOW"
+        },
+        {
+          "pawnId": 3,
+          "pawnColor": "YELLOW"
+        },
+        {
+          "pawnId": 4,
+          "pawnColor": "YELLOW"
+        }
+      ]
+    },
+    {
+      "playerId": 4,
+      "playerName": "KIRAN",
+      "pawnDetails": [
+        {
+          "pawnId": 1,
+          "pawnColor": "BLUE"
+        },
+        {
+          "pawnId": 2,
+          "pawnColor": "BLUE"
+        },
+        {
+          "pawnId": 3,
+          "pawnColor": "BLUE"
+        },
+        {
+          "pawnId": 4,
+          "pawnColor": "BLUE"
+        }
+      ]
+    }
+  ],
+  "roomDetails": {
+    "roomId": 212,
+    "roomType": "CREATED_BY_USER",
+    "createdAt": 1731899511841,
+    "ownerDetails": {
+      "ownerPlayerId": 4,
+      "ownerName": "KIRAN"
+    },
+    "roomConstraints": {
+      "maxNoOfPlayerAllowed": 4,
+      "minNoOfPlayerAllowed": 2
+    },
+    "isActive": "TRUE"
+  }
+}

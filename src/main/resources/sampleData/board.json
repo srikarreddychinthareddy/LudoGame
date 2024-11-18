@@ -1,0 +1,107 @@
+{
+  "gameId": 231,
+  "gameStatus": "ACTIVE",
+  "board" : [],
+  "playerPosition": [
+    {
+      "playerId": 1,
+      "pawnPositions": [
+        {
+          "pawnId": 1,
+          "currentlyAt": 1,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 2,
+          "currentlyAt": 1,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 3,
+          "currentlyAt": 1,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 4,
+          "currentlyAt": 1,
+          "isAtHome": "FALSE"
+        }
+      ]
+    },
+    {
+      "playerId": 2,
+      "pawnPositions": [
+        {
+          "pawnId": 1,
+          "currentlyAt": 23,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 2,
+          "currentlyAt": 25,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 3,
+          "currentlyAt": 42,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 4,
+          "currentlyAt": 21,
+          "isAtHome": "FALSE"
+        }
+      ]
+    },
+    {
+      "playerId": 3,
+      "pawnPositions": [
+        {
+          "pawnId": 1,
+          "currentlyAt": 33,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 2,
+          "currentlyAt": 35,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 3,
+          "currentlyAt": 3,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 4,
+          "currentlyAt": 2,
+          "isAtHome": "FALSE"
+        }
+      ]
+    },
+    {
+      "playerId": 4,
+      "pawnPositions": [
+        {
+          "pawnId": 1,
+          "currentlyAt": 19,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 2,
+          "currentlyAt": 18,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 3,
+          "currentlyAt": 17,
+          "isAtHome": "FALSE"
+        },
+        {
+          "pawnId": 4,
+          "currentlyAt": 0,
+          "isAtHome": "TRUE"
+        }
+      ]
+    }
+  ]
+}

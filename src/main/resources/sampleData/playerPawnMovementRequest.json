@@ -1,0 +1,23 @@
+{
+  "roomId": 1,
+  "playerMovements": [
+    {
+      "playerId": 1,
+      "pawnMovements": [
+        {
+          "pawnId": 1,
+          "diceOutcome": 2
+        }
+      ]
+    },
+    {
+      "playerId": 2,
+      "pawnMovements": [
+        {
+          "pawnId": 1,
+          "diceOutcome": 2
+        }
+      ]
+    }
+  ]
+}
